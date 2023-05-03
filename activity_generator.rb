@@ -11,7 +11,6 @@ class ActivityGenerator
 
   def start_process(path_to_executable_file, *args)
     io = IO.popen([path_to_executable_file, *args].join(' '))
-    
     pid = io.pid
     log_process_start(pid)
     Process.wait(pid)
@@ -19,9 +18,7 @@ class ActivityGenerator
 
   def create_file(path_to_file)
     file = File.new(path_to_file, 'w')
-    file.close
     log_file_activity('create', path_to_file)
-    file
   end
 
   def modify_file(path_to_file)
@@ -29,7 +26,6 @@ class ActivityGenerator
     file.write('test')
     file.close
     log_file_activity('modify', path_to_file)
-    file
   end
 
   def delete_file(path_to_file)
@@ -102,12 +98,3 @@ class ActivityGenerator
     })
   end
 end
-
-activity_generator = ActivityGenerator.new('activity_generator.txt')
-
-
-activity_generator.start_process('ls', '-l')
-activity_generator.create_file('test.txt')
-activity_generator.modify_file('test.txt')
-activity_generator.delete_file('test.txt')
-activity_generator.establish_network_connection_and_transmit_data
