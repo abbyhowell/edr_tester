@@ -2,7 +2,7 @@
 
 ## My Solution
 
-I created a Ruby class called `ActivityGenerator` that can generate the desired endpoint activity. I took the code that calls those methods, and put them into a class called EdmTester, so that you could call `EdmTester.run_tests` and run through all the different activities. Then I added a file called `main.rb` that you can run from the command line with `rb main.rb` to invoke the program. 
+I created a Ruby class called `ActivityGenerator` that can generate the desired endpoint activity. I took the code that calls those methods, and put them into a class called EdmTester, so that you could call `EdrTester.run_tests` and run through all the different activities. Then I added a file called `main.rb` that you can run from the command line with `rb main.rb` to invoke the program. 
 
 ### How did it go?
 
